@@ -27,7 +27,6 @@ function chooseOperation(operator) {
         calculate ()
     }
 
-
     operation = operator
 
     updateScreen()
@@ -62,6 +61,13 @@ function calculate(){
     nextNumber = ""
 }
 
+function clearAll() {
+    previousNumber = ""
+    nextNumber = ""
+    operation = ""
+    $screenDisplay.innerHTML = "0"
+}
+
 const $numberButtons = document.querySelectorAll("[data-number]")
 $numberButtons.forEach(button => button.addEventListener("click", () => 
     appendNumber(button.dataset.number)
@@ -79,3 +85,6 @@ $equalButton.addEventListener("click", () => {
     calculate()
     updateScreen()
 })
+
+const $clearAllButton = document.querySelector("[data-clear-all]")
+$clearAllButton.addEventListener("click", () => clearAll())
