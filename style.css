@@ -18,6 +18,7 @@ body {
     background: #000;
     padding: 24px 12px 12px;
     border-radius: 6px;
+    box-shadow: 1px 1px 20px #534e4e;
 }
 
 .screen-display {
@@ -29,6 +30,7 @@ body {
     height: 50px;
     margin: 0 6px;
     padding-right: 6px;
+    box-shadow: inset 1px 1px 5px 1px #555151;
 }
 
 .calculator-buttons {
@@ -62,4 +64,8 @@ td:not(:active):focus {
 
 .equal {
     background: #c78101;
+}
+
+.upEqual {
+    background: #555151;
 }
