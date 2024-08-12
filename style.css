@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #5de15d, #025902);
+   /* background: linear-gradient(to bottom, #5de15d, #025902);*/
 }
 
 .calculator-container {
@@ -26,7 +26,7 @@ body {
     justify-content: flex-end;
     background: #fff;
     font-size: 20px;
-    height: 34px;
+    height: 50px;
     margin: 0 6px;
     padding-right: 6px;
 }
@@ -45,9 +45,21 @@ td {
     font-size: 20px;
     cursor: pointer;
     transition: background 0.2s;
+    border-radius: 5px;
 }
 
 td:hover {
     background: rgba(255, 255, 255, 0.15);
+}
 
+td:active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+td:not(:active):focus {
+    background: #3d3939;
+}
+
+.equal {
+    background: #c78101;
 }
