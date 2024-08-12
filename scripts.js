@@ -45,7 +45,7 @@ function calculate(){
             previousNumber -= nextNumber
             break
 
-        case "X": 
+        case "x": 
             previousNumber *= nextNumber
             break
 
