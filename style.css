@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-   /* background: linear-gradient(to bottom, #5de15d, #025902);*/
+    background: linear-gradient(to bottom, #5de15d, #025902);
 }
 
 .calculator-container {
