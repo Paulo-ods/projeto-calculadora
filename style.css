@@ -49,11 +49,11 @@ td {
     transition: background 0.2s;
     border-radius: 5px;
 }
-
+/*
 td:hover {
     background: rgba(255, 255, 255, 0.15);
 }
-
+*/
 td:active, td:focus {
     background: rgba(255, 255, 255, 0.15);
 }
