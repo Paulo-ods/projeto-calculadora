@@ -54,11 +54,11 @@ td:hover {
     background: rgba(255, 255, 255, 0.15);
 }
 
-td:active {
+td:active, td:focus {
     background: rgba(255, 255, 255, 0.15);
 }
 
-td:not(:active):focus {
+td:active:focus {
     background: #3d3939;
 }
 
