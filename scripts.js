@@ -16,6 +16,20 @@ function appendNumber(number) {
 
 function updateScreen(){
     if (operation == ""){
+        const integerDigits = Number(previousNumber.split(".")[0])
+        const decimalDigits = previousNumber.split(".")[1]
+
+        if (decimalDigits == undefined) {
+            previousNumber = integerDigits.toLocaleString("en", {
+                maximumFractionDigits: 0
+            })
+        } else {
+            previousNumber = `${integerDigits.toLocaleString("en", {
+                maximumFractionDigits: 0
+            })}.${decimalDigits}`
+        }
+
+
         $screenDisplay.innerHTML = previousNumber
     } else {
         $screenDisplay.innerHTML = `${previousNumber} ${operation} ${nextNumber}`
@@ -68,6 +82,16 @@ function clearAll() {
     $screenDisplay.innerHTML = "0"
 }
 
+function deleteDigit () {
+    if (operation == ""){
+        previousNumber = previousNumber.slice(0, -1)
+    } else {
+        nextNumber = nextNumber.slice(0, -1)
+    }
+
+    updateScreen()
+}
+
 const $numberButtons = document.querySelectorAll("[data-number]")
 $numberButtons.forEach(button => button.addEventListener("click", () => 
     appendNumber(button.dataset.number)
@@ -88,3 +112,6 @@ $equalButton.addEventListener("click", () => {
 
 const $clearAllButton = document.querySelector("[data-clear-all]")
 $clearAllButton.addEventListener("click", () => clearAll())
+
+const $deleteButton = document.querySelector("[data-delete]")
+$deleteButton.addEventListener("click", () => deleteDigit())
