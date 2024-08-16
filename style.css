@@ -47,6 +47,7 @@ td {
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: 3px 4px 3px #000000a3;
 }
 /*
 td:hover {
