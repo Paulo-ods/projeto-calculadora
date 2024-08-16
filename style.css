@@ -26,8 +26,8 @@ body {
     align-items: center;
     justify-content: flex-end;
     background: #fff;
-    font-size: 20px;
-    height: 50px;
+    font-size: 25px;
+    height: 60px;
     margin: 0 6px;
     padding-right: 6px;
     box-shadow: inset 1px 1px 5px 1px #555151;
@@ -38,8 +38,8 @@ body {
 }
 
 td {
-    width: 45px;
-    height: 45px;
+    width: 59px;
+    height: 56px;
     text-align: center;
     background: #3d3939;
     color: #fff;
