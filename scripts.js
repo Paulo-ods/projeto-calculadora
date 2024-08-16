@@ -14,24 +14,36 @@ function appendNumber(number) {
     updateScreen()
 }
 
+function formatNumber(number){
+    number = number.toString()
+
+    const integerDigits = Number(number.split(".")[0].replace(/,/g, ""))
+    const decimalDigits = number.split(".")[1]
+
+    if (decimalDigits == undefined) {
+        number = integerDigits.toLocaleString("en", {
+            maximumFractionDigits: 0
+        })
+    } else {
+        number = `${integerDigits.toLocaleString("en", {
+            maximumFractionDigits: 0
+        })}.${decimalDigits}`
+    }
+
+    return number
+}
+
 function updateScreen(){
     if (operation == ""){
-        const integerDigits = Number(previousNumber.split(".")[0])
-        const decimalDigits = previousNumber.split(".")[1]
 
-        if (decimalDigits == undefined) {
-            previousNumber = integerDigits.toLocaleString("en", {
-                maximumFractionDigits: 0
-            })
-        } else {
-            previousNumber = `${integerDigits.toLocaleString("en", {
-                maximumFractionDigits: 0
-            })}.${decimalDigits}`
-        }
-
+        previousNumber = formatNumber(previousNumber)
 
         $screenDisplay.innerHTML = previousNumber
     } else {
+        previousNumber = formatNumber(previousNumber)
+        if(nextNumber != "") {
+            nextNumber = formatNumber(nextNumber) 
+        }
         $screenDisplay.innerHTML = `${previousNumber} ${operation} ${nextNumber}`
     }
 }
@@ -47,8 +59,8 @@ function chooseOperation(operator) {
 }
 
 function calculate(){
-    previousNumber = Number(previousNumber)
-    nextNumber = Number(nextNumber)
+    previousNumber = Number(previousNumber.replace(/,/g, ""))
+    nextNumber = Number(nextNumber.replace(/,/g, ""))
 
     switch (operation) {
         case "+":
